@@ -1,0 +1,52 @@
+{
+    "Ukraine": {
+        "location": "Europe",
+        "area": 603628,
+        "population": 36744636
+    },
+    "Romania": {
+        "location": "Europe",
+        "area": 238397,
+        "population": 18877397
+    },
+    "Israel": {
+        "location": "Middle East",
+        "area": 22145,
+        "population": 9036028
+    },
+    "Switzerland": {
+        "location": "Europe",
+        "area": 41290,
+        "population": 8832417
+    },
+    "Germany": {
+        "location": "Europe",
+        "area": 357580,
+        "population": 84536211
+    },
+    "Singapore": {
+        "location": "Asia",
+        "area": 7331,
+        "population": 5979599
+    },
+    "Luxembourg": {
+        "location": "Europe",
+        "area": 2590,
+        "population": 654606
+    },
+    "Japan": {
+        "location": "Asia",
+        "area": 377973,
+        "population": 125388972
+    },
+    "Botswana": {
+        "location": "Africa",
+        "area": 581730,
+        "population": 2485007
+    },
+    "China": {
+        "location": "Asia",
+        "area": 9562910,
+        "population": 1455022808
+    }
+}

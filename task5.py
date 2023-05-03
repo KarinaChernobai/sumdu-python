@@ -9,7 +9,6 @@ class Country:
         self.area = area
         self.population = population
 
-
 countries = {
     "Ukraine": Country("Europe", 603628, 36744636),
     "Romania": Country("Europe", 238397, 18877397),
@@ -46,7 +45,7 @@ def init_countries():
             case 2:
                 add_country()
             case 3:
-                _del_country()
+                del_country()
             case 4:
                 sort_countries()
             case 5:
@@ -79,7 +78,7 @@ def add_country():
     print("Країна ", key, " додана до словнику.")
 
 
-def _del_country():
+def del_country():
     key = input("Введіть країну, яку хочете видалити зі словника: ")
     if countries.get(key) is None:
         print("Такої країни нема у словнику.")

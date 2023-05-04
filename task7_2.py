@@ -1,10 +1,11 @@
 import json
 
 countries = dict()
+file_name = 'countries.json'
 
 
 def init_countries():
-    load_JSON()
+    load_JSON(file_name)
 
     print("Якщо ви хочете вивести усі значення з JSON файлу, тоді натисніть -> 1 <-")
     print("Якщо ви хочете додати новий запис до JSON файлу, тоді натисніть -> 2 <-")
@@ -42,11 +43,13 @@ def init_countries():
         print()
 
 
-def load_JSON():
+# load_JSON is changed for task8
+def load_JSON(file_name):
     global countries
-    file = open('countries.json')
+    file = open(file_name)
     countries = json.load(file)
     file.close()
+    return countries
 
 
 def update_JSON():

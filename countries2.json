@@ -1,0 +1,82 @@
+{
+    "Ukraine": {
+        "location": "Europe",
+        "area": 603628,
+        "population": 36744636
+    },
+    "Romania": {
+        "location": "Europe",
+        "area": 238397,
+        "population": 18877397
+    },
+    "Israel": {
+        "location": "Middle East",
+        "area": 22145,
+        "population": 9036028
+    },
+    "Switzerland": {
+        "location": "Europe",
+        "area": 41290,
+        "population": 8832417
+    },
+    "Germany": {
+        "location": "Europe",
+        "area": 357580,
+        "population": 84536211
+    },
+    "Singapore": {
+        "location": "Asia",
+        "area": 7331,
+        "population": 5979599
+    },
+    "Luxembourg": {
+        "location": "Europe",
+        "area": 2590,
+        "population": 654606
+    },
+    "Japan": {
+        "location": "Asia",
+        "area": 377973,
+        "population": 125388972
+    },
+    "Botswana": {
+        "location": "Africa",
+        "area": 581730,
+        "population": 2485007
+    },
+    "Rwanda": {
+        "location": "Africa",
+        "area": 26338,
+        "population": 13859678
+    },
+    "China": {
+        "location": "Asia",
+        "area": 9562910,
+        "population": 1455022808
+    },
+    "Canada": {
+        "location": "North America",
+        "area": 9984670,
+        "population": 38678184
+    },
+    "United States": {
+        "location": "North America",
+        "area": 9831510,
+        "population": 336491463
+    },
+    "Micronesia ": {
+        "location": "Oceania",
+        "area": 702,
+        "population": 113131
+    },
+    "Brazil": {
+        "location": "South America",
+        "area": 8515767,
+        "population":  216828568
+    },
+    "Qatar": {
+        "location": "Middle East",
+        "area": 11571,
+        "population":  3018623
+    }
+}

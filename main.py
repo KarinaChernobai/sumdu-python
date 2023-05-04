@@ -15,5 +15,5 @@ from task7_2 import task7_2
 # task4_2()
 # task5()
 # task6()
-# task7_1()
-task7_2()
+task7_1()
+# task7_2()

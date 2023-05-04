@@ -1,93 +1,56 @@
 import csv
-import os
+
+field_names = ['Country Name', 'GDP per capita']
+countries = []
+target_year = "2016"
+empty_value = "no data"
+
+source_file = 'countries.csv'
+res_file = 'picked_countries.csv'
 
 
-def read_from_file():
-    with open('example.csv', newline='') as File:
-        reader = csv.reader(File)
+def print_countries():
+    print(f"This program prints GDP per capita for every country in {target_year}.")
+    with open(source_file) as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter=',')
+        line_count = 0
+        cell_name_i = 0
+        cell_val_i = 0
+        for row in csv_reader:
+            if line_count == 0:
+                for i in range(0, len(row)):
+                    cell = row[i]
+                    if cell == field_names[0]:
+                        cell_name_i = i
+                    if cell == target_year:
+                        cell_val_i = i
+                line_count += 1
+            else:
+                country_name = row[cell_name_i]
+                gdp = row[cell_val_i] if row[cell_val_i] != "" else empty_value
+                print(f'{country_name}: {gdp}')
+                countries.append({field_names[0]: country_name, field_names[1]: gdp})
+                line_count += 1
+        print(f'Processed {line_count} lines.')
 
-        for row in reader:
-            print(row)
 
+def search_countries():
+    gdp_limit = float(input("Search for countries with GDP greater than: "))
+    picked_countries = []
+    gdp = field_names[1]
 
-def write_to_file():
-    my_data = [["first_name", "second_name", "Grade"], ['Alex', 'Brian', 'A'], ['Tom', 'Smith', 'B']]
-    my_file = open('example2.csv', 'w')
-    with my_file:
-        writer = csv.writer(my_file)
-        writer.writerows(my_data)
-    print("Writing complete")
+    for country in countries:
+        if country[gdp] != empty_value and gdp_limit < float(country[gdp]):
+            picked_countries.append(country)
 
+    with open(res_file, 'w', encoding='UTF8', newline='') as f:
+        writer = csv.DictWriter(f, fieldnames=field_names)
+        writer.writeheader()
+        writer.writerows(picked_countries)
 
-def example2():
-    with open('task7_1.data.csv', newline='') as File:
-        reader = csv.reader(File)
-
-        for row in reader:
-            print(row)
-
-
-def example():
-    flag = False
-
-    try:
-
-        csvfile = open("Lab8.csv", "r")
-
-        reader = csv.DictReader(csvfile, delimiter=";")
-
-        print("Country Name: 2016 [YR2016]")
-
-        for row in reader:
-            print(row['Country Name'], ': ', row["2016 [YR2016]"])
-
-        csvfile.close
-
-    except:
-
-        print("Файл Lab8.csv не знайдено!")
-
-    try:
-
-        csvfile = open("Lab8.csv", "r")
-
-        reader = csv.DictReader(csvfile, delimiter=";")
-
-        indicator = input("\nВведіть будь-яке значення, щоб знайти показники, які більші, ніж значення, яке ви ввели: ")
-
-        while indicator.isalpha():
-            indicator = input("Введіть значення ще раз, так як повина бути цифра: ")
-
-        os.system('clear')
-
-        print("Country Name: 2016 [YR2016]")
-
-        for row in reader:
-
-            if indicator < row["2016 [YR2016]"]:
-                flag = True
-
-                print(row["Country Name"], ": ", row["2016 [YR2016]"])
-
-                with open("new_lab8.csv", "a") as csvfile2:
-                    writer = csv.writer(csvfile2, delimiter=";")
-
-                    writer.writerow((row["Country Name"], row["2016 [YR2016]"]))
-
-        csvfile.close
-
-        if flag == False:
-            os.system('clear')
-
-            print("Показників, які більші, ніж значення, яке ви ввели (" + indicator + ") - немає.")
-
-    except:
-
-        print("Файл Lab8.csv не знайдено!")
+    print(f'Search results were saved in {res_file}')
 
 
 def task7_1():
-    # example()
-    # example2()
-    read_from_file()
-    write_to_file()
+    print_countries()
+    search_countries()

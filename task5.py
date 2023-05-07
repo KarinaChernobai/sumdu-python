@@ -9,6 +9,7 @@ class Country:
         self.area = area
         self.population = population
 
+
 countries = {
     "Ukraine": Country("Europe", 603628, 36744636),
     "Romania": Country("Europe", 238397, 18877397),
@@ -55,6 +56,7 @@ def init_countries():
             case _:
                 raise Exception("You've entered the wrong code")
         print()
+
 
 def print_countries():
     for key, value in countries.items():

@@ -1,4 +1,5 @@
 from task1 import task1
+from task10 import task10
 from task2 import task2
 from task3 import task3
 from task4_1 import task4_1
@@ -20,4 +21,5 @@ from task9 import task9
 # task7_1()
 # task7_2()
 # task8()
-task9()
+# task9()
+task10()
